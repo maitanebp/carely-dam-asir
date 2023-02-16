@@ -1,0 +1,29 @@
+<div *ngIf="isLoading">
+<h1>cargando</h1>
+</div>
+<div *ngIf="!isLoading">
+   <figure class="figure">
+        <img alt="img" src="{{cuidador.imagen}}" class="figure-img img-fluid rounded">
+        <figcaption class="figure-caption">
+          <h4> Nombre: {{ cuidador.nombre }}</h4>
+          <h5> Apellido: {{cuidador.apellido}}</h5>
+          <h5> Precio: {{cuidador.precio | currency}}</h5>
+          <h5> Imagen: {{cuidador.imagen}}</h5>
+          <h5> Description: {{cuidador.descripcion}}</h5>
+          <h5> Categorias: {{cuidador.categorias}}</h5>
+        </figcaption>
+      </figure>
+ </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <button class="btn btn-outline-secondary mr-3"
+                (click)="onBack()">
+          <i class="fa fa-chevron-left"></i> Back
+        </button>
+        <button class="btn btn-outline-primary"
+                (click)="goEdit()">
+                
+          Edit
+        </button>
+      </div>
+    </div>

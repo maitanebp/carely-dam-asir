@@ -1,0 +1,96 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+
+    <div class="card-body">
+        <form novalidate (ngSubmit)="saveCuidador()" [formGroup]="cuidadorForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="cuidadorNombreId">Nombre</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="cuidadorNombreId" type="text" placeholder="Name (required)"
+                        formControlName="nombre" name="nombre" value={{cuidador.nombre}}/>
+                </div>
+
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="cuidadorApellidoId">Apellido</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="cuidadorApellidoId" type="text" placeholder="Name (required)"
+                        formControlName="apellido" name="apellido" value={{cuidador.apellido}} />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="precioId">Precio</label>
+
+                <div class="col-md-8">
+                    <input class="form-control" id="precioId" placeholder="Precio" formControlName="precio" name="precio" value={{cuidador.precio}}/>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="descriptionId">Descripcion</label>
+
+                <div class="col-md-8">
+                    <textarea class="form-control" id="descripcionId" placeholder="Descripcion" rows=3
+                        formControlName="descripcion" name="descripcion" value={{cuidador.descripcion}}></textarea>
+                </div>
+            </div>
+
+
+            <!-- <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="categoriasId">Categorias</label>
+
+                <div class="col-md-8">
+                    <input class="form-control" id="categoriasId" placeholder="Categorias" formControlName="categorias"
+                        name="categorias" value={{cuidador.categorias}} />
+                </div>
+            </div> -->
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="categoriesId">Categories *</label>
+
+                <div class="col-md-8">
+                    <select class="form-select" aria-label="Default select example" id="categoriesId" placeholder="Categories" formControlName="categorias"
+                    name="categorias">
+                        <!-- <option selected>Seleccione categoria</option> -->
+                        <option value="1">Animales</option>
+                        <option value="2">Mayores</option>
+                        <option value="3">Niñes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="imagenId">Imagen</label>
+
+                <div class="col-md-8">
+                    <input class="form-control" id="imagenId" placeholder="Imagen" formControlName="imagen"
+                        name="imagen" value={{cuidador.imagen}} />
+                </div>
+            </div>
+
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-4">
+                    <button class="btn btn-primary mr-3" type="submit">
+                        Save
+                    </button>
+                    <button class="btn btn-outline-secondary mr-3" type="button" title="Cancel your edits"
+                        [routerLink]="['']">
+                        Cancel
+                    </button>
+                    <button class="btn btn-outline-warning"                  
+                    type="button"
+                    title="Delete this product"
+                    (click)="deleteCuidador()">
+              Delete
+            </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+    </div>
+</div>

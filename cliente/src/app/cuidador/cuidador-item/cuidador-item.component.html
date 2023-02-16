@@ -1,0 +1,12 @@
+
+<figure class="figure">
+    <img alt="PerfilImg" src="{{cuidador.imagen}}" class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">
+      <h5><a [routerLink]="['/cuidadores', cuidador.id]">{{cuidador.nombre}}</a>
+        <span>{{cuidador.precio }}</span>
+      </h5>
+      <p>{{cuidador.descripcion}}</p>
+    
+    </figcaption>
+  </figure>
+  

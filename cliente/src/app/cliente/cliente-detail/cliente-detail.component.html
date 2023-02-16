@@ -1,0 +1,21 @@
+<figure class="figure">
+            <img alt="img" src="" class="figure-img img-fluid rounded">
+            <figcaption class="figure-caption">
+              <h4> Nombre: {{ cliente.nombre }}</h4>
+              <h5> Apellido: {{cliente.contra}}</h5>
+            </figcaption>
+          </figure>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <button class="btn btn-outline-secondary mr-3"
+                    (click)="onBack()">
+              <i class="fa fa-chevron-left"></i> Back
+            </button>
+            <button class="btn btn-outline-primary"
+                    (click)="goEdit()">
+                    
+              Edit
+            </button>
+          </div>
+        </div>
+    
